@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 
-import Button from '../../UI/Button/Button';
 import './CourseInput.css';
+
+//import styled components
+import Button from '../../UI/Button/Button';
+import FormControl from '../../UI/FormControl/FormControl';
 
 const CourseInput = (props) => {
   //state value to capture entered text
@@ -30,10 +33,10 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
+      <FormControl invalid={!isValid}>
         <label>Course Goal</label>
         <input type='text' onChange={goalInputChangeHandler} />
-      </div>
+      </FormControl>
       <Button type='submit'>Add Goal</Button>
     </form>
   );
